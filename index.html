@@ -6,24 +6,24 @@
 <title>Campus Compass — a student guide to Mumbai for NMIMS</title>
 <meta name="description" content="Broker contacts, cheap places to eat near campus and semester-by-semester practice papers for NMIMS students in Mumbai. Built by a student, free to use.">
 <meta name="author" content="Dhriti Shah">
-<link rel="canonical" href="https://dhritishah105-design.github.io/campus.compass/">
+<link rel="canonical" href="https://dhritishah105-design.github.io/">
 <meta name="theme-color" content="#0d4f4a" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b1a18" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%230d4f4a'/><circle cx='16' cy='16' r='6.5' fill='%23f59e0b'/></svg>">
-<link rel="apple-touch-icon" href="https://dhritishah105-design.github.io/campus.compass/og-image.png">
+<link rel="apple-touch-icon" href="https://dhritishah105-design.github.io/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Campus Compass">
 <meta property="og:title" content="Campus Compass — a student guide to Mumbai for NMIMS">
 <meta property="og:description" content="Broker contacts, cheap places to eat near campus and semester-by-semester practice papers for NMIMS students in Mumbai. Built by a student, free to use.">
-<meta property="og:url" content="https://dhritishah105-design.github.io/campus.compass/">
-<meta property="og:image" content="https://dhritishah105-design.github.io/campus.compass/og-image.png">
+<meta property="og:url" content="https://dhritishah105-design.github.io/">
+<meta property="og:image" content="https://dhritishah105-design.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Campus Compass — new to Mumbai? Start here.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Campus Compass — a student guide to Mumbai for NMIMS">
 <meta name="twitter:description" content="Broker contacts, cheap places to eat near campus and semester-by-semester practice papers for NMIMS students in Mumbai. Built by a student, free to use.">
-<meta name="twitter:image" content="https://dhritishah105-design.github.io/campus.compass/og-image.png">
+<meta name="twitter:image" content="https://dhritishah105-design.github.io/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -300,6 +300,83 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
 .feed-head { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase;
              color: var(--on-signal); background: var(--signal); display: inline-block;
              padding: 3px 10px; border-radius: 3px; margin: 24px 0 10px; }
+/* ---------- added: separators in the section nav ---------- */
+.brand-sub { gap: 6px 0; align-items: center; }
+.brand-sub a { padding-right: 13px; margin-right: 13px; border-right: 1px solid var(--line); }
+.brand-sub a:last-child { padding-right: 0; margin-right: 0; border-right: 0; }
+
+/* ---------- added: sub-headings inside a tab ---------- */
+h4.sub { font-family: var(--f-display); font-weight: 700; font-size: clamp(20px, 2.5vw, 26px);
+         margin: 30px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--line); }
+h4.sub:first-of-type { margin-top: 20px; }
+
+/* ---------- added: suburban line diagram ---------- */
+:root { --rail-w: #b45309; --rail-c: #0f766e; --rail-h: #4f46e5; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --rail-w: #fb923c; --rail-c: #2dd4bf; --rail-h: #a5b4fc; } }
+:root[data-theme="dark"] { --rail-w: #fb923c; --rail-c: #2dd4bf; --rail-h: #a5b4fc; }
+.linemap { margin: 0 0 6px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 18px 16px 14px; }
+.linemap figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; max-width: 72ch; }
+.lmsvg { width: 100%; height: auto; display: block; overflow: visible; }
+.lm-track { stroke-width: 5; stroke-linecap: round; fill: none; }
+.lm-dot { fill: var(--card); stroke-width: 3; }
+.lm-inner { stroke: none; }
+.lm-campus { fill: var(--signal); stroke: var(--ink); stroke-width: 3.5; }
+.lm-halo { fill: none; stroke: var(--card); stroke-width: 3; }
+.lm-w, .lm-w-t { stroke: var(--rail-w); }
+.lm-c, .lm-c-t { stroke: var(--rail-c); }
+.lm-h, .lm-h-t { stroke: var(--rail-h); }
+.lm-w-f { fill: var(--rail-w); } .lm-c-f { fill: var(--rail-c); } .lm-h-f { fill: var(--rail-h); }
+.lm-name { font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.1em; stroke: none; font-weight: 500; }
+.lm-w-t { fill: var(--rail-w); stroke: none; }
+.lm-c-t { fill: var(--rail-c); stroke: none; }
+.lm-h-t { fill: var(--rail-h); stroke: none; }
+.lm-stop { font-family: var(--f-body); font-size: 13px; fill: var(--muted); text-anchor: middle; }
+.lm-key { fill: var(--ink); font-weight: 600; }
+.lm-legend { font-family: var(--f-body); font-size: 13px; fill: var(--muted); }
+.lm-faint { font-style: italic; }
+
+/* ---------- added: metro line list ---------- */
+.metrolines { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.metrolines li { display: flex; gap: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; min-width: 0; }
+.metrolines .ml { flex: none; width: 6px; border-radius: 3px; background: var(--c, var(--signal)); }
+.metrolines b { display: block; font-family: var(--f-display); font-weight: 700; font-size: 20px; margin-bottom: 3px; }
+.metrolines span:not(.ml) { display: block; color: var(--muted); font-size: 15.5px; }
+/* ---------- added: keep the line diagram legible on a phone ---------- */
+.lm-scroll { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+.lmsvg { min-width: 760px; }
+.lm-hint { display: none; color: var(--ink); font-weight: 600; }
+@media (max-width: 800px) { .lm-hint { display: inline; } }
+/* ---------- added: app cards ---------- */
+.apps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); }
+.apps li { background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+           padding: 15px 17px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.app-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 9px; }
+.app-h b { font-family: var(--f-display); font-weight: 700; font-size: 21px; }
+.app-tag { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase;
+           color: var(--on-signal); background: var(--signal); border-radius: 3px; padding: 2px 7px; }
+.app-d { color: var(--muted); font-size: 15px; flex: 1; }
+.app-get { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.app-get a { display: inline-flex; align-items: center; min-height: 36px; padding: 5px 14px;
+             border: 1.5px solid var(--line); border-radius: 999px; text-decoration: none;
+             font-size: 14px; font-weight: 600; color: var(--link); }
+.app-get a:hover { border-color: var(--ink); color: var(--ink); }
+/* ---------- added: the review ribbon ---------- */
+.ribbon { position: relative; overflow: hidden; }
+.ribbon::before, .ribbon::after { content: ""; position: absolute; top: 0; bottom: 0; width: 44px;
+                                  pointer-events: none; z-index: 2; }
+.ribbon::before { left: 0;  background: linear-gradient(90deg, var(--bg), transparent); }
+.ribbon::after  { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+.quotes { columns: auto; display: flex; flex-wrap: nowrap; gap: 16px; width: max-content; padding-block: 2px; }
+.quotes .quote { flex: 0 0 clamp(248px, 29vw, 350px); width: auto; display: block; margin: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .quotes.rolling { animation-name: ribbon-roll; animation-timing-function: linear; animation-iteration-count: infinite; }
+  .ribbon:hover .quotes.rolling, .ribbon:focus-within .quotes.rolling { animation-play-state: paused; }
+}
+@keyframes ribbon-roll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+@media (prefers-reduced-motion: reduce) { .ribbon { overflow-x: auto; } }
+@media (max-width: 900px) { .quotes { columns: auto; } }
+@media (max-width: 620px) { .quotes { columns: auto; } }
 </style>
 </head>
 <body>
@@ -436,6 +513,9 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
         <button class="tab" type="button" role="tab" id="tab-study" data-tab="study" aria-selected="false" aria-controls="tp-study">Study-friendly cafes</button>
         <button class="tab" type="button" role="tab" id="tab-chai" data-tab="chai" aria-selected="false" aria-controls="tp-chai">Chai and quick bites</button>
         <button class="tab" type="button" role="tab" id="tab-late" data-tab="late" aria-selected="false" aria-controls="tp-late">Late-night options</button>
+        <button class="tab" type="button" role="tab" id="tab-bandra" data-tab="bandra" aria-selected="false" aria-controls="tp-bandra">Bandra on a budget</button>
+        <button class="tab" type="button" role="tab" id="tab-splurge" data-tab="splurge" aria-selected="false" aria-controls="tp-splurge">Worth the splurge</button>
+        <button class="tab" type="button" role="tab" id="tab-apps" data-tab="apps" aria-selected="false" aria-controls="tp-apps">Food apps</button>
         <button class="tab" type="button" role="tab" id="tab-area" data-tab="area" aria-selected="false" aria-controls="tp-area">Cafés by area</button>
       </div>
 
@@ -506,12 +586,90 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
               <tr><td><span class="bname">Cafe 2.0</span></td><td data-label="What to try">Burgers, wraps, fries</td><td class="ph" data-label="Closes">Midnight</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+2.0+JVPD" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
               <tr><td><span class="bname">Luuma House</span></td><td data-label="What to try">Continental food, pizzas and more</td><td class="ph" data-label="Closes">1 AM</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Luuma+House+JVPD" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
               <tr><td><span class="bname">Starbucks – Gulmohar Road</span></td><td data-label="What to try">Coffee and light bites</td><td class="ph" data-label="Closes">Midnight</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Starbucks+Gulmohar+Road+Vile+Parle" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+                          <tr><td><span class="bname">Mogul Sarai</span></td><td data-label="What to try">Mughlai, kebabs and Hakka</td><td class="ph" data-label="Closes">Very late, check</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mogul+Sarai+Bandra+Talao+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Sigdi</span></td><td data-label="What to try">Curries and grilled meats</td><td class="ph" data-label="Closes">Around 5 AM</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Sigdi+Restaurant+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Ayaz – The Kebab Place</span></td><td data-label="What to try">Kebabs and rolls</td><td class="ph" data-label="Closes">2 AM</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ayaz+The+Kebab+Place+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">The Third House</span></td><td data-label="What to try">Late dinner and drinks</td><td class="ph" data-label="Closes">4 AM</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Third+House+Andheri+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Fatboy's Kitchen</span></td><td data-label="What to try">Burgers and comfort food</td><td class="ph" data-label="Closes">3 AM</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Fatboy%27s+Kitchen+Andheri+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Happytite</span></td><td data-label="What to try">Round-the-clock menu</td><td class="ph" data-label="Closes">24 hours</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Happytite+Andheri+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Sagar Chinese</span></td><td data-label="What to try">Indian Chinese, big portions</td><td class="ph" data-label="Closes">4 AM</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Sagar+Chinese+Juhu+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
             </tbody>
           </table>
         </div>
         <p class="note">Closing times are as listed and can change, so check before you head out.</p>
       </div>
 
+      <div class="tabpanel" id="tp-bandra" role="tabpanel" aria-labelledby="tab-bandra" hidden>
+        <h3 class="tp-h">Bandra on a budget</h3>
+        <p class="tp-d">Worth the train ride. Bandra has a reputation for being expensive, and plenty of it is, but these are the places students actually eat at.</p>
+        <div class="table-wrap wrap-stack">
+          <table class="t-narrow t-stack">
+            <thead><tr><th scope="col">Place</th><th scope="col">What to get</th><th scope="col">Directions</th></tr></thead>
+            <tbody>
+              <tr><td><span class="bname">Cafe Andora</span></td><td data-label="What to get">Chinese fried rice, noodles and cheap desserts</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Andora+Hill+Road+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Duke's Restaurant</span></td><td data-label="What to get">Chicken fried rice and quick filling plates</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Duke%27s+Restaurant+Bandra+West+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Shake and Sip</span></td><td data-label="What to get">Frankie rolls and shakes</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Shake+and+Sip+Bandra+West+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Momo Station</span></td><td data-label="What to get">Steamed momos with two chutneys</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Momo+Station+Bandra+West+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Kalpana Snack Corner</span></td><td data-label="What to get">Calzones made fresh — open only about 2 to 4 pm</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kalpana+Snack+Corner+Bandra+West+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Yummies</span></td><td data-label="What to get">Schezwan fried rice, popular with the college crowd</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Yummies+Carter+Road+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Gomantak</span></td><td data-label="What to get">Malwani fish thali</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gomantak+Pali+Hill+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Anand Dosa</span></td><td data-label="What to get">Dosas, cheap and consistent</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Anand+Dosa+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Bandra is four stops south on the Western line, and the walk from the station towards Hill Road and Linking Road covers most of this list.</p>
+      </div>
+      <div class="tabpanel" id="tp-splurge" role="tabpanel" aria-labelledby="tab-splurge" hidden>
+        <h3 class="tp-h">Worth the splurge</h3>
+        <p class="tp-d">For a birthday, a results night, or when somebody&rsquo;s parents are visiting and paying.</p>
+        <div class="table-wrap wrap-stack">
+          <table class="t-narrow t-stack">
+            <thead><tr><th scope="col">Place</th><th scope="col">Why go</th><th scope="col">Directions</th></tr></thead>
+            <tbody>
+              <tr><td><span class="bname">Roofberries</span></td><td data-label="Why go">Rooftop on Linking Road, good for a long evening</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Roofberries+Linking+Road+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Veranda</span></td><td data-label="Why go">Modern Indian with a rooftop, Bandra</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Veranda+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Gadda Da Vida</span></td><td data-label="Why go">Juhu beach, cocktails and the sunset from your table</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gadda+Da+Vida+Juhu+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Estella</span></td><td data-label="Why go">Modern Australian and Asian, Juhu</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Estella+Juhu+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Bora Bora</span></td><td data-label="Why go">Sea view — the Juhu outlet is the one to go to</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bora+Bora+Juhu+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">AER, Four Seasons</span></td><td data-label="Why go">34th-floor skyline at Worli. For a real occasion</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=AER+Four+Seasons+Worli+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">These are properly expensive by student standards &mdash; book ahead, check the dress code, and look at the menu prices before you go rather than after.</p>
+      </div>
+      <div class="tabpanel" id="tp-apps" role="tabpanel" aria-labelledby="tab-apps" hidden>
+        <h3 class="tp-h">Food apps</h3>
+        <p class="tp-d">Five apps cover delivery, groceries and getting a table.</p>
+        <h4 class="sub">The apps worth having</h4>
+        <ul class="apps">
+          <li>
+            <div class="app-h"><b>Swiggy</b><span class="app-tag">Delivery</span></div>
+            <span class="app-d">Food delivery, plus Instamart groceries and Dineout table bookings.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=in.swiggy.android" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id989540920" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>Zomato</b><span class="app-tag">Delivery</span></div>
+            <span class="app-d">The other big one. Worth having both and comparing.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.application.zomato" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id434613896" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>EazyDiner</b><span class="app-tag">Bookings</span></div>
+            <span class="app-d">Table reservations and deals, strongest on the upscale places.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.easydiner" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id1018594093" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>Zepto</b><span class="app-tag">Groceries</span></div>
+            <span class="app-d">Groceries and essentials in minutes. Students use it more than supermarkets.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.zeptoconsumerapp" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id1575323645" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>Blinkit</b><span class="app-tag">Groceries</span></div>
+            <span class="app-d">Same idea as Zepto. Whichever delivers faster to your flat wins.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.grofers.customerapp" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id960335206" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+        </ul>
+        <p class="note">Table bookings and dining discounts live inside Swiggy, under Dineout. EazyDiner is the one to check for the pricier places.</p>
+      </div>
       <div class="tabpanel" id="tp-area" role="tabpanel" aria-labelledby="tab-area" hidden>
         <h3 class="tp-h">Cafés by area</h3>
         <p class="tp-d">More cafés and restaurants around Andheri and Juhu.</p>
@@ -599,6 +757,8 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
         <button class="tab" type="button" role="tab" id="stab-laundry" data-tab="laundry" aria-selected="false" aria-controls="sp-laundry">Laundry &amp; ironing</button>
         <button class="tab" type="button" role="tab" id="stab-clean" data-tab="clean" aria-selected="false" aria-controls="sp-clean">Cleaning</button>
         <button class="tab" type="button" role="tab" id="stab-repair" data-tab="repair" aria-selected="false" aria-controls="sp-repair">AC, appliances &amp; repairs</button>
+        <button class="tab" type="button" role="tab" id="stab-shoes" data-tab="shoes" aria-selected="false" aria-controls="sp-shoes">Shoe &amp; bag care</button>
+        <button class="tab" type="button" role="tab" id="stab-moving" data-tab="moving" aria-selected="false" aria-controls="sp-moving">Shifting</button>
       </div>
       <div class="tabpanel" id="sp-cooks" role="tabpanel" aria-labelledby="stab-cooks">
         <h3 class="tp-h">Home cooks and tiffin services</h3>
@@ -707,7 +867,14 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
       <div class="tabpanel" id="sp-clean" role="tabpanel" aria-labelledby="stab-clean" hidden>
         <h3 class="tp-h">Deep cleaning and pest control</h3>
         <p class="tp-d">Flat deep cleans before moving in, regular cleaning help and pest control.</p>
-                <div class="table-wrap wrap-stack">
+                <ul class="apps">
+          <li>
+            <div class="app-h"><b>Urban Company</b><span class="app-tag">App</span></div>
+            <span class="app-d">Deep cleaning, pest control, AC service and repairs at published rates. Book a slot instead of chasing quotes.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.urbanclap.urbanclap" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id1032480595" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+        </ul>
+        <div class="table-wrap wrap-stack">
           <table class="t-narrow t-stack">
             <thead><tr><th scope="col">Service</th><th scope="col">What they do</th><th scope="col">Find them</th></tr></thead>
             <tbody>
@@ -775,6 +942,47 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
         <div class="feed" data-feed="repair"></div>
         <p class="note">These were found online as a starting point &mdash; <b>nobody has tried them for you</b>. Read recent reviews, confirm the price, and compare two or three before you book. Used someone good? <a class="js-reco" href="mailto:medhritishah@gmail.com?subject=Campus%20Compass%20%E2%80%93%20a%20recommendation&body=What%20kind%20of%20service%3A%0AName%3A%0APhone%3A%0AArea%3A%0AWhat%20they%20do%20and%20roughly%20what%20it%20costs%3A%0A%0AHave%20you%20used%20them%20yourself%3F%0A">Send them in</a>.</p>
       </div>
+      <div class="tabpanel" id="sp-shoes" role="tabpanel" aria-labelledby="stab-shoes" hidden>
+        <h3 class="tp-h">Shoes, bags and helmets</h3>
+        <p class="tp-d">Cleaning and repair for the things that die fastest in a Mumbai monsoon.</p>
+        <div class="table-wrap wrap-stack">
+          <table class="t-narrow t-stack">
+            <thead><tr><th scope="col">Service</th><th scope="col">What they do</th><th scope="col">Find them</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="bname">Queen's Dry Clean</span><span class="bsub">Pickup across Mumbai</span></td>
+                <td data-label="What they do">Sneaker cleaning, stains, yellowing and odour removal</td>
+                <td data-label="Find them"><a href="https://www.google.com/maps/search/?api=1&amp;query=Queen%27s+Dry+Clean+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td>
+              </tr>
+              <tr>
+                <td><span class="bname">Steampress</span><span class="bsub">Pickup in Mumbai</span></td>
+                <td data-label="What they do">Shoe, bag and helmet cleaning and repair</td>
+                <td data-label="Find them"><a href="https://www.google.com/maps/search/?api=1&amp;query=Steampress+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="feed" data-feed="shoes"></div>
+        <p class="note">Found online as a starting point &mdash; <b>nobody has tried them for you</b>. Check recent reviews and confirm the price first. Used someone good? <a class="js-reco" href="mailto:medhritishah@gmail.com?subject=Campus%20Compass%20%E2%80%93%20a%20recommendation&body=What%20kind%20of%20service%3A%0AName%3A%0APhone%3A%0AArea%3A%0AWhat%20they%20do%20and%20roughly%20what%20it%20costs%3A%0A%0AHave%20you%20used%20them%20yourself%3F%0A">Send them in</a>.</p>
+      </div>
+      <div class="tabpanel" id="sp-moving" role="tabpanel" aria-labelledby="stab-moving" hidden>
+        <h3 class="tp-h">Moving your things</h3>
+        <p class="tp-d">Changing flats, or arriving with more luggage than you can carry.</p>
+        <ul class="apps">
+          <li>
+            <div class="app-h"><b>Porter</b><span class="app-tag">App</span></div>
+            <span class="app-d">Mini trucks and two-wheelers on demand. The usual answer for moving a flat&rsquo;s worth of things across the city.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.theporter.android.customerapp" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id1109398410" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+        </ul>
+        <ul class="facts">
+          <li><b>Get the quote in writing</b><span>Two or three written quotes before you book. Verbal estimates grow on moving day, every time.</span></li>
+          <li><b>Ask what happens if something breaks</b><span>Get the insurance or damage terms in writing too, especially for a TV or a laptop.</span></li>
+          <li><b>Book around the 1st and the 11th</b><span>Rental agreements turn over then, so movers are busiest and dearest in those weeks.</span></li>
+        </ul>
+        <div class="feed" data-feed="moving"></div>
+        <p class="note">Found online as a starting point &mdash; <b>nobody has tried them for you</b>. Check recent reviews and confirm the price first. Used someone good? <a class="js-reco" href="mailto:medhritishah@gmail.com?subject=Campus%20Compass%20%E2%80%93%20a%20recommendation&body=What%20kind%20of%20service%3A%0AName%3A%0APhone%3A%0AArea%3A%0AWhat%20they%20do%20and%20roughly%20what%20it%20costs%3A%0A%0AHave%20you%20used%20them%20yourself%3F%0A">Send them in</a>.</p>
+      </div>
     </section>
 
     <section class="stop-section" id="transport" aria-labelledby="transport-h" hidden>
@@ -788,11 +996,79 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
         <button class="tab" type="button" role="tab" id="rt-train" data-tab="train" aria-selected="true" aria-controls="r-train">Local trains</button>
         <button class="tab" type="button" role="tab" id="rt-metro" data-tab="metro" aria-selected="false" aria-controls="r-metro">Metro &amp; buses</button>
         <button class="tab" type="button" role="tab" id="rt-road" data-tab="road" aria-selected="false" aria-controls="r-road">Autos, cabs &amp; bikes</button>
-        <button class="tab" type="button" role="tab" id="rt-apps" data-tab="apps" aria-selected="false" aria-controls="r-apps">Passes &amp; apps</button>
+        <button class="tab" type="button" role="tab" id="rt-apps" data-tab="apps" aria-selected="false" aria-controls="r-apps">Apps &amp; planning</button>
       </div>
       <div class="tabpanel" id="r-train" role="tabpanel" aria-labelledby="rt-train">
         <h3 class="tp-h">The local train</h3>
         <p class="tp-d">The spine of the city. Vile Parle is on the Western Line, and Andheri is the big junction just north of it.</p>
+        <h4 class="sub">How the three lines fit together</h4>
+        <figure class="linemap">
+          <div class="lm-scroll">
+<svg viewBox="0 0 900 300" role="img" aria-labelledby="lm-title lm-desc" class="lmsvg">
+<title id="lm-title">The three Mumbai suburban lines</title>
+<desc id="lm-desc">Western line runs Churchgate to Virar through Vile Parle, where the campus is. Central runs CSMT to Kalyan. Harbour runs CSMT to Panvel. Change between Western and Central at Dadar, and between Central and Harbour at Kurla.</desc>
+<text x="0" y="24" class="lm-name lm-w-t">WESTERN LINE</text>
+<line x1="60" y1="52" x2="739" y2="52" class="lm-track lm-w"/>
+<circle cx="60" cy="52" r="5.5" class="lm-dot lm-w"/>
+<text x="60" y="74" class="lm-stop">Churchgate</text>
+<circle cx="157" cy="52" r="5.5" class="lm-dot lm-w"/>
+<text x="157" y="74" class="lm-stop">Mumbai Central</text>
+<circle cx="254" cy="52" r="8.5" class="lm-dot lm-w"/>
+<circle cx="254" cy="52" r="3" class="lm-inner lm-w-f"/>
+<text x="254" y="74" class="lm-stop lm-key">Dadar</text>
+<circle cx="351" cy="52" r="5.5" class="lm-dot lm-w"/>
+<text x="351" y="74" class="lm-stop">Bandra</text>
+<circle cx="448" cy="52" r="8" class="lm-campus"/>
+<text x="448" y="74" class="lm-stop lm-key">Vile Parle</text>
+<circle cx="545" cy="52" r="5.5" class="lm-dot lm-w"/>
+<text x="545" y="74" class="lm-stop">Andheri</text>
+<circle cx="642" cy="52" r="5.5" class="lm-dot lm-w"/>
+<text x="642" y="74" class="lm-stop">Borivali</text>
+<circle cx="739" cy="52" r="5.5" class="lm-dot lm-w"/>
+<text x="739" y="74" class="lm-stop">Virar</text>
+<text x="0" y="114" class="lm-name lm-c-t">CENTRAL LINE</text>
+<line x1="60" y1="142" x2="642" y2="142" class="lm-track lm-c"/>
+<circle cx="60" cy="142" r="5.5" class="lm-dot lm-c"/>
+<text x="60" y="164" class="lm-stop">CSMT</text>
+<circle cx="157" cy="142" r="5.5" class="lm-dot lm-c"/>
+<text x="157" y="164" class="lm-stop">Byculla</text>
+<circle cx="254" cy="142" r="8.5" class="lm-dot lm-c"/>
+<circle cx="254" cy="142" r="3" class="lm-inner lm-c-f"/>
+<text x="254" y="164" class="lm-stop lm-key">Dadar</text>
+<circle cx="351" cy="142" r="8.5" class="lm-dot lm-c"/>
+<circle cx="351" cy="142" r="3" class="lm-inner lm-c-f"/>
+<text x="351" y="164" class="lm-stop lm-key">Kurla</text>
+<circle cx="448" cy="142" r="5.5" class="lm-dot lm-c"/>
+<text x="448" y="164" class="lm-stop">Ghatkopar</text>
+<circle cx="545" cy="142" r="5.5" class="lm-dot lm-c"/>
+<text x="545" y="164" class="lm-stop">Thane</text>
+<circle cx="642" cy="142" r="5.5" class="lm-dot lm-c"/>
+<text x="642" y="164" class="lm-stop">Kalyan</text>
+<text x="0" y="204" class="lm-name lm-h-t">HARBOUR LINE</text>
+<line x1="60" y1="232" x2="642" y2="232" class="lm-track lm-h"/>
+<circle cx="60" cy="232" r="5.5" class="lm-dot lm-h"/>
+<text x="60" y="254" class="lm-stop">CSMT</text>
+<circle cx="254" cy="232" r="5.5" class="lm-dot lm-h"/>
+<text x="254" y="254" class="lm-stop">Wadala</text>
+<circle cx="351" cy="232" r="8.5" class="lm-dot lm-h"/>
+<circle cx="351" cy="232" r="3" class="lm-inner lm-h-f"/>
+<text x="351" y="254" class="lm-stop lm-key">Kurla</text>
+<circle cx="448" cy="232" r="5.5" class="lm-dot lm-h"/>
+<text x="448" y="254" class="lm-stop">Mankhurd</text>
+<circle cx="545" cy="232" r="5.5" class="lm-dot lm-h"/>
+<text x="545" y="254" class="lm-stop">Vashi</text>
+<circle cx="642" cy="232" r="5.5" class="lm-dot lm-h"/>
+<text x="642" y="254" class="lm-stop">Panvel</text>
+<circle cx="8" cy="284" r="8.5" class="lm-dot lm-c"/><circle cx="8" cy="284" r="3" class="lm-inner lm-c-f"/>
+<text x="24" y="288" class="lm-legend">change lines here</text>
+<circle cx="186" cy="284" r="8" class="lm-campus"/>
+<text x="202" y="288" class="lm-legend">your stop for campus</text>
+<text x="380" y="288" class="lm-legend lm-faint">Simplified. Not to scale, and not every station is shown.</text>
+</svg>
+          </div>
+          <figcaption>Three separate lines, not one network. You cannot ride straight from the Western line to the Central line &mdash; you change at Dadar, or at Kurla for the Harbour line.<span class="lm-hint"> Scroll the diagram sideways to see all of it.</span></figcaption>
+        </figure>
+        <h4 class="sub">Things to know</h4>
         <ul class="facts">
           <li><b>Know your direction, not just your station</b><span>Trains are announced by their final destination. Churchgate is south towards town, Virar and Borivali are north towards the suburbs. Get the direction wrong and you will know within one stop.</span></li>
           <li><b>Fast trains skip the small stations</b><span>Vile Parle is a slow-train stop. A fast train will sail straight past it and leave you at Andheri or Bandra. Check the board before you board.</span></li>
@@ -802,41 +1078,121 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
           <li><b>Stand at the right end of the platform</b><span>Work out which end your exit is at and board that coach. It saves you fighting the length of the platform at the other end.</span></li>
           <li><b>Never ride the footboard</b><span>People are killed on this line every year doing exactly that. If a train is too full, wait for the next one. Another comes in minutes.</span></li>
         </ul>
+        <h4 class="sub">Booking your tickets</h4>
+        <ul class="facts">
+          <li><b>RailOne is the app now, not UTS</b><span>The old UTS app was retired on 1 March 2026 and RailOne replaced it for unreserved and suburban tickets. Same job: buy on your phone instead of queueing. You have to be physically near the station for it to let you book.</span></li>
+          <li><b>A season pass beats buying each time</b><span>A monthly or quarterly pass works out far cheaper than a ticket a day, and you walk straight past the queue. Worth it from the first week if you travel most days.</span></li>
+          <li><b>Ask about the student concession early</b><span>Students can get a concession pass with a certificate from college. The paperwork takes time, so start it before term gets busy.</span></li>
+          <li><b>Always travel with a valid ticket</b><span>Checkers do spot checks and the penalty is far more than the fare. If you bought a pass in the old UTS app, keep a screenshot until it expires &mdash; old bookings did not carry over.</span></li>
+        </ul>
+        <p class="note">No timings on this page on purpose. They change, and <b>m-Indicator</b> has the live ones along with the full station map.</p>
       </div>
       <div class="tabpanel" id="r-metro" role="tabpanel" aria-labelledby="rt-metro" hidden>
         <h3 class="tp-h">Metro and buses</h3>
-        <p class="tp-d">Slower than the local in a straight line, but air-conditioned, far less crowded, and better for east–west trips.</p>
+        <p class="tp-d">Slower than the local in a straight line, but air-conditioned, far less crowded, and much better for east–west trips the train does not make.</p>
+        <h4 class="sub">The lines worth knowing</h4>
+        <ul class="metrolines">
+          <li><span class="ml" style="--c:#2563eb"></span><div><b>Line 1 &middot; Blue</b><span>Versova &ndash; Andheri &ndash; Ghatkopar. The east&ndash;west one, and the most useful from campus. Andheri is where it meets the Western line.</span></div></li>
+          <li><span class="ml" style="--c:#eab308"></span><div><b>Line 2A &middot; Yellow</b><span>Dahisar to Andheri West, running up the western suburbs parallel to the train.</span></div></li>
+          <li><span class="ml" style="--c:#dc2626"></span><div><b>Line 7 &middot; Red</b><span>Dahisar East to Gundavali in Andheri East. The eastern twin of the Yellow line.</span></div></li>
+          <li><span class="ml" style="--c:#0891b2"></span><div><b>Line 3 &middot; Aqua</b><span>Underground, Aarey through BKC down to Cuffe Parade. This is the one that reaches BKC and south Mumbai without the road traffic.</span></div></li>
+        </ul>
+        <p class="note">The network keeps growing and new sections open every year. Check a current map rather than one a senior sent you last year.</p>
+        <h4 class="sub">Things to know</h4>
         <ul class="facts">
-          <li><b>The metro crosses Andheri east to west</b><span>That link is genuinely useful — it reaches parts of Andheri East and beyond without putting you on the road in traffic.</span></li>
-          <li><b>The network keeps growing</b><span>New lines along the western suburbs have opened in recent years and more are under construction. Check a current map rather than one someone sent you last year.</span></li>
+          <li><b>Andheri is the meeting point</b><span>It is where the metro, the Western line and the Harbour branch all come together. Most metro journeys from campus start by getting to Andheri.</span></li>
           <li><b>It closes earlier than the local</b><span>Do not plan a late night around catching the metro home. Check the last service before you go out.</span></li>
-          <li><b>BEST buses fill the gaps</b><span>For the short hops the train does not cover, buses are cheap and go everywhere. The Chalo app shows live buses and sells passes.</span></li>
-          <li><b>AC buses cost more and are worth it in May</b><span>Non-AC is fine most of the year. In peak summer and in the monsoon, the air-conditioned ones are a different experience.</span></li>
+          <li><b>Tickets at the counter or the machine</b><span>Buy a token or tap a card at the gate. Card and app options exist and differ by line, so check what the line you use accepts.</span></li>
+          <li><b>Worth it in May</b><span>In peak summer and in the monsoon, the air conditioning is not a luxury. Many people switch to metro for those months and back to the train after.</span></li>
+        </ul>
+        <h4 class="sub">Buses</h4>
+        <ul class="facts">
+          <li><b>BEST buses fill the gaps</b><span>For the short hops the train and metro do not cover, buses go almost everywhere and cost very little.</span></li>
+          <li><b>Chalo shows live buses</b><span>The Chalo app tracks buses in real time and sells passes, which beats standing at a stop guessing.</span></li>
         </ul>
       </div>
       <div class="tabpanel" id="r-road" role="tabpanel" aria-labelledby="rt-road" hidden>
-        <h3 class="tp-h">On the road</h3>
+        <h3 class="tp-h">Autos, cabs and bikes</h3>
         <p class="tp-d">For everything the rail network does not reach, which is most of your daily life around campus.</p>
+        <h4 class="sub">Which one to take</h4>
         <ul class="facts">
-          <li><b>Autos are the default in the suburbs</b><span>For short distances around Vile Parle, Juhu and Andheri, an auto is usually quickest. Insist on the meter rather than agreeing a price.</span></li>
-          <li><b>Autos cannot go south of Bandra and Mahim</b><span>Below that boundary it is black-and-yellow taxis or an app cab. If you are heading into town, plan for the change.</span></li>
-          <li><b>Share autos are much cheaper</b><span>Fixed routes running from the station to common destinations, shared with other passengers. Ask at the stand which ones go your way.</span></li>
-          <li><b>App cabs surge exactly when you need them</b><span>Rain and rush hour are when prices climb and cars disappear. On a wet evening, an auto or the train will often beat waiting for a cab.</span></li>
+          <li><b>Short hop around Vile Parle, Juhu or Andheri</b><span>An auto on the meter. Almost always the fastest and cheapest for a few kilometres.</span></li>
+          <li><b>Anywhere south of Bandra or Mahim</b><span>Autos are not allowed down there. It is a black-and-yellow taxi or an app cab.</span></li>
+          <li><b>Station to a common destination</b><span>A share auto from the stand. Fixed route, shared with others, a fraction of the price.</span></li>
+          <li><b>Late at night, or alone</b><span>An app cab with the trip shared to someone. The tracking is the point, not the comfort.</span></li>
+        </ul>
+        <h4 class="sub">Things to know</h4>
+        <ul class="facts">
+          <li><b>Insist on the meter</b><span>For autos in the suburbs the meter is the norm. Agreeing a price up front almost always costs you more.</span></li>
+          <li><b>App cabs surge exactly when you need them</b><span>Rain and rush hour are when prices climb and cars disappear. On a wet evening an auto or the train will usually beat waiting for a cab.</span></li>
           <li><b>Bike taxi rules keep changing</b><span>They have been permitted, banned and re-permitted in Maharashtra more than once. Check what is currently legal before relying on one.</span></li>
-          <li><b>At night, take the tracked ride</b><span>An app cab with a shared trip link is worth the extra over flagging something down, especially travelling alone.</span></li>
+          <li><b>Share autos are not obvious to find</b><span>They run from fixed points near stations. Ask at the stand which ones go your way &mdash; nobody will tell you unprompted.</span></li>
+        </ul>
+        <h4 class="sub">Paying</h4>
+        <ul class="facts">
+          <li><b>UPI works almost everywhere</b><span>Most autos and taxis now take it. Keep a little cash anyway for the ones that do not, and for when the network drops.</span></li>
+          <li><b>Round up, do not haggle over ten rupees</b><span>Standard practice, and it makes the next ride easier for everyone.</span></li>
         </ul>
       </div>
       <div class="tabpanel" id="r-apps" role="tabpanel" aria-labelledby="rt-apps" hidden>
-        <h3 class="tp-h">Passes and apps</h3>
-        <p class="tp-d">A season pass and the right app will change your daily life here more than anything else on this page.</p>
-        <ul class="facts">
-          <li><b>m-Indicator is the one everyone uses</b><span>Train timings, bus routes, metro, and the maintenance blocks. Install it in your first week.</span></li>
-          <li><b>Get a season pass if you travel most days</b><span>A monthly or quarterly pass works out far cheaper than buying a ticket each time, and you skip the queue entirely.</span></li>
-          <li><b>Ask about the student concession early</b><span>Students can get a concession pass with a certificate from college. The paperwork takes time, so start it before term gets busy.</span></li>
-          <li><b>Book on your phone instead of queueing</b><span>The UTS app sells tickets without the window. You need to be near the station for it to work.</span></li>
-          <li><b>Sunday megablocks are real</b><span>Planned maintenance shuts sections of line, usually on Sundays. Check before you commit to a Sunday plan across the city.</span></li>
-          <li><b>Maps does not know everything</b><span>Routing apps are good for roads and improving on rail, but they will not warn you about a megablock or which coach to stand in.</span></li>
+        <h3 class="tp-h">Apps and planning</h3>
+        <p class="tp-d">Five apps cover almost everything here. Install them in your first week rather than working it out during your first monsoon.</p>
+        <h4 class="sub">The apps to install</h4>
+        <ul class="apps">
+          <li>
+            <div class="app-h"><b>m-Indicator</b><span class="app-tag">Mumbai only</span></div>
+            <span class="app-d">Train, bus and metro timings, plus Sunday megablock alerts.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.mobond.mindicator" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id593278253" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>RailOne</b><span class="app-tag">Official</span></div>
+            <span class="app-d">Buy suburban tickets and season passes. Replaced the UTS app.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=org.cris.aikyam" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id6473384334" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>Mumbai One</b><span class="app-tag">Metro</span></div>
+            <span class="app-d">QR metro tickets for Lines 2A and 7, paid by UPI or card.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.mmrda" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id6478221525" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>Chalo</b><span class="app-tag">Buses</span></div>
+            <span class="app-d">Live bus tracking and bus passes.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=app.zophop" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id1607824800" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
+          <li>
+            <div class="app-h"><b>Rapido</b><span class="app-tag">Bikes &amp; autos</span></div>
+            <span class="app-d">Bike taxis and autos. Often cheaper than a cab in traffic.</span>
+            <p class="app-get"><a href="https://play.google.com/store/apps/details?id=com.rapido.passenger" target="_blank" rel="noopener noreferrer">Android</a><a href="https://apps.apple.com/in/app/id1198464606" target="_blank" rel="noopener noreferrer">iPhone</a></p>
+          </li>
         </ul>
+        <p class="note">Uber and Ola work here exactly as they do anywhere, so install those too if you want them.</p>
+        <h4 class="sub">Planning around the city</h4>
+        <ul class="facts">
+          <li><b>Sunday megablocks are real</b><span>Planned maintenance shuts stretches of line, usually on Sundays. m-Indicator flags them. Check before committing to a Sunday plan across town.</span></li>
+          <li><b>Leave a buffer in the monsoon</b><span>A journey that takes forty minutes in January can take two hours in July. Build it in rather than apologising later.</span></li>
+          <li><b>Screenshot your pass</b><span>Phone batteries die and station signal is patchy. A screenshot has saved a lot of people a fine.</span></li>
+        </ul>
+      </div>
+      <div class="tabpanel" id="c-do" role="tabpanel" aria-labelledby="ct-do" hidden>
+        <h3 class="tp-h">Things to do</h3>
+        <p class="tp-d">For the weekends when you have run out of assignments and do not want to spend the day in the flat.</p>
+        <div class="table-wrap wrap-stack">
+          <table class="t-narrow t-stack">
+            <thead><tr><th scope="col">Place</th><th scope="col">Why go</th><th scope="col">Directions</th></tr></thead>
+            <tbody>
+              <tr><td><span class="bname">Prithvi Theatre</span></td><td data-label="Why go">Plays most nights and a famous café attached. Ten minutes from campus and genuinely cheap</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prithvi+Theatre+Juhu+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Marine Drive</span></td><td data-label="Why go">The one everybody does, and it costs nothing. Go at sunset and sit on the wall</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Marine+Drive+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Carter Road and Bandstand</span></td><td data-label="Why go">Seaside promenades in Bandra where half the city walks in the evening</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Carter+Road+Promenade+Bandra+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Bandra Fort</span></td><td data-label="Why go">Ruins, sea views and the best sunset in the suburbs</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bandra+Fort+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Colaba Causeway</span></td><td data-label="Why go">Street shopping and old cafés. Bargaining is expected, not rude</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Colaba+Causeway+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Juhu Beach</span></td><td data-label="Why go">Street food more than swimming. Closest to campus, very crowded at weekends</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Juhu+Beach+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Gateway of India</span></td><td data-label="Why go">And the ferry from there out to the Elephanta Caves</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gateway+of+India+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Kala Ghoda</span></td><td data-label="Why go">Galleries, bookshops and the art district, best on a Sunday</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kala+Ghoda+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+              <tr><td><span class="bname">Sanjay Gandhi National Park</span></td><td data-label="Why go">Actual forest inside the city, with the Kanheri Caves inside it</td><td data-label="Directions"><a href="https://www.google.com/maps/search/?api=1&amp;query=Sanjay+Gandhi+National+Park+Borivali+Mumbai" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Most of this list is free or close to it. Check opening days before you travel across the city &mdash; several of these are shut on Mondays.</p>
       </div>
       <p class="note">Learned something the hard way that should be on this page? <a class="js-reco" href="mailto:medhritishah@gmail.com?subject=Campus%20Compass%20%E2%80%93%20a%20recommendation&body=What%20kind%20of%20service%3A%0AName%3A%0APhone%3A%0AArea%3A%0AWhat%20they%20do%20and%20roughly%20what%20it%20costs%3A%0A%0AHave%20you%20used%20them%20yourself%3F%0A">Send it in</a> and it goes up for the next batch.</p>
     </section>
@@ -854,6 +1210,7 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
         <button class="tab" type="button" role="tab" id="ct-money" data-tab="money" aria-selected="false" aria-controls="c-money">Money &amp; admin</button>
         <button class="tab" type="button" role="tab" id="ct-safe" data-tab="safe" aria-selected="false" aria-controls="c-safe">Staying safe</button>
         <button class="tab" type="button" role="tab" id="ct-settle" data-tab="settle" aria-selected="false" aria-controls="c-settle">Settling in</button>
+        <button class="tab" type="button" role="tab" id="ct-do" data-tab="do" aria-selected="false" aria-controls="c-do">Things to do</button>
       </div>
       <div class="tabpanel" id="c-monsoon" role="tabpanel" aria-labelledby="ct-monsoon">
         <h3 class="tp-h">The monsoon</h3>
@@ -919,7 +1276,8 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
         <h2 id="says-h">What other students say</h2>
         <p>Students who moved to Mumbai for NMIMS, in their own words.</p>
       </div>
-      <div class="quotes">
+      <div class="ribbon">
+        <div class="quotes ribbon-track" id="quote-track">
         <figure class="quote">
           <blockquote>&ldquo;Moving to Mumbai was a little overwhelming at first. Campus Compass helped me figure out accommodation, food places and other basics without having to ask ten different people!&rdquo;</blockquote>
           <figcaption><b>Riya Chopra</b><span>Indore</span></figcaption>
@@ -948,6 +1306,7 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
           <blockquote>&ldquo;Coming to a new city for college is exciting but stressful. Campus Compass helped me discover affordable food spots and useful places around Mumbai. Made the transition much smoother!&rdquo;</blockquote>
           <figcaption><b>Pravinya Skanda</b><span>Hyderabad</span></figcaption>
         </figure>
+        </div>
       </div>
       <div class="cta">
         <p>Used Campus Compass? Tell me what helped and what is missing, and I will add your review here.</p>
@@ -1248,6 +1607,9 @@ var SHEET_CSV_URL = '';
     if (v.indexOf('cook') > -1 || v.indexOf('tiffin') > -1) return 'cooks';
     if (v.indexOf('cloud') > -1) return 'cloud';
     if (v.indexOf('laundry') > -1) return 'laundry';
+    // shoes and shifting are checked first: "shoe cleaning" would otherwise match 'clean'
+    if (v.indexOf('shoe') > -1 || v.indexOf('bag') > -1) return 'shoes';
+    if (v.indexOf('shift') > -1 || v.indexOf('moving') > -1 || v.indexOf('packer') > -1) return 'moving';
     if (v.indexOf('clean') > -1) return 'clean';
     if (v.indexOf('repair') > -1 || v.indexOf('appliance') > -1) return 'repair';
     return '';
@@ -1338,7 +1700,7 @@ var SHEET_CSV_URL = '';
   }
 
   function render(rows, map) {
-    var buckets = { cooks: [], cloud: [], laundry: [], clean: [], repair: [], review: [] };
+    var buckets = { cooks: [], cloud: [], laundry: [], clean: [], repair: [], shoes: [], moving: [], review: [] };
 
     rows.forEach(function (r) {
       if (map.approved < 0) return;                       // no Approved column: publish nothing
@@ -1348,7 +1710,7 @@ var SHEET_CSV_URL = '';
       if (buckets[cat]) buckets[cat].push(r);
     });
 
-    ['cooks', 'cloud', 'laundry', 'clean', 'repair'].forEach(function (cat) {
+    ['cooks', 'cloud', 'laundry', 'clean', 'repair', 'shoes', 'moving'].forEach(function (cat) {
       var mount = document.querySelector('[data-feed="' + cat + '"]');
       if (!mount) return;
       var panel = mount.parentNode;
@@ -1366,6 +1728,7 @@ var SHEET_CSV_URL = '';
         var card = reviewCard(r, map);
         if (card) quotes.appendChild(card);
       });
+      if (window.CCRibbon) window.CCRibbon();   // fold the new reviews into the rolling ribbon
     }
   }
 
@@ -1403,6 +1766,38 @@ var SHEET_CSV_URL = '';
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
+})();
+
+/* ==========================================================================
+   ROLLING REVIEW RIBBON
+   The cards scroll continuously. Hovering or tabbing into one pauses it, and
+   anyone who has asked their device to reduce motion gets a plain scrollable
+   row instead of an animation.
+   ========================================================================== */
+(function () {
+  var track = document.getElementById('quote-track');
+  if (!track) return;
+
+  function build() {
+    Array.prototype.forEach.call(track.querySelectorAll('[data-clone]'), function (n) {
+      n.parentNode.removeChild(n);
+    });
+    track.classList.remove('rolling');
+    var originals = Array.prototype.slice.call(track.children);
+    if (originals.length < 3) return;          // too few to loop convincingly
+
+    originals.forEach(function (n) {
+      var c = n.cloneNode(true);
+      c.setAttribute('data-clone', '1');
+      c.setAttribute('aria-hidden', 'true');   // the duplicate set is decoration
+      track.appendChild(c);
+    });
+    track.style.animationDuration = (originals.length * 7) + 's';
+    track.classList.add('rolling');
+  }
+
+  window.CCRibbon = build;
+  build();
 })();
 </script>
 
