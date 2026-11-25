@@ -6,24 +6,24 @@
 <title>Campus Compass — a student guide to Mumbai for NMIMS</title>
 <meta name="description" content="Broker contacts, cheap places to eat near campus and semester-by-semester practice papers for NMIMS students in Mumbai. Built by a student, free to use.">
 <meta name="author" content="Dhriti Shah">
-<link rel="canonical" href="https://dhritishah105-design.github.io/">
+<link rel="canonical" href="https://dhritishah105-design.github.io/campus.compass/">
 <meta name="theme-color" content="#123a6b" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1420" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23123a6b'/><circle cx='16' cy='16' r='6.5' fill='%23f2b705'/></svg>">
-<link rel="apple-touch-icon" href="https://dhritishah105-design.github.io/og-image.png">
+<link rel="apple-touch-icon" href="https://dhritishah105-design.github.io/campus.compass/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Campus Compass">
 <meta property="og:title" content="Campus Compass — a student guide to Mumbai for NMIMS">
 <meta property="og:description" content="Broker contacts, cheap places to eat near campus and semester-by-semester practice papers for NMIMS students in Mumbai. Built by a student, free to use.">
-<meta property="og:url" content="https://dhritishah105-design.github.io/">
-<meta property="og:image" content="https://dhritishah105-design.github.io/og-image.png">
+<meta property="og:url" content="https://dhritishah105-design.github.io/campus.compass/">
+<meta property="og:image" content="https://dhritishah105-design.github.io/campus.compass/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Campus Compass — new to Mumbai? Start here.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Campus Compass — a student guide to Mumbai for NMIMS">
 <meta name="twitter:description" content="Broker contacts, cheap places to eat near campus and semester-by-semester practice papers for NMIMS students in Mumbai. Built by a student, free to use.">
-<meta name="twitter:image" content="https://dhritishah105-design.github.io/og-image.png">
+<meta name="twitter:image" content="https://dhritishah105-design.github.io/campus.compass/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -97,7 +97,7 @@ nav.main a:hover { border-bottom-color: var(--signal); }
 .route { list-style: none; margin: clamp(28px, 5vw, 48px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); position: relative; }
 .route::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 6px; background: var(--signal); border-radius: 3px; }
 .route li { position: relative; padding-top: 36px; padding-right: 16px; min-width: 0; }
-.route li::before { content: ""; position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--board); border: 6px solid var(--on-board); }
+.route li::before { content: ""; box-sizing: border-box; position: absolute; left: 0; top: 0; width: var(--dot, 40px); height: var(--dot, 40px); border-radius: 50%; background: var(--board); border: 6px solid var(--on-board); }
 .route a { display: block; text-decoration: none; color: var(--on-board); }
 .route .stop { font-family: var(--f-display); font-size: clamp(26px, 4vw, 38px); font-weight: 700; text-transform: uppercase; line-height: 1; }
 .route .what { display: block; margin-top: 6px; color: var(--on-board-soft); font-size: 15px; line-height: 1.4; }
@@ -273,17 +273,24 @@ a.ph:hover { text-decoration: underline; text-decoration-thickness: 2px; text-un
 .empty .empty-act a { color: var(--link); font-weight: 600; text-decoration: none; }
 .empty .empty-act a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 /* ---------- added: six stops, wrapping into rows ---------- */
-.route { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px 0; }
+/* One dot size and one rail thickness drive everything, so the circle and the
+   line always share a centre. Pseudo-elements need box-sizing set explicitly:
+   the `*` reset at the top of this file does not reach ::before or ::after. */
+.route { --dot: 40px; --rail: 6px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px 0; }
 .route::before { display: none; }
-.route li::after { content: ""; position: absolute; left: 28px; right: 0; top: 11px; height: 6px; background: var(--signal); border-radius: 3px; }
-.route li { padding-top: 36px; padding-right: 18px; }
+.route li { padding-top: calc(var(--dot) + 8px); padding-right: 18px; }
+.route li::after { content: ""; box-sizing: border-box; position: absolute;
+                   left: var(--dot); right: 0;
+                   top: calc(var(--dot) / 2 - var(--rail) / 2); height: var(--rail);
+                   background: var(--signal); border-radius: 3px; }
 .route .stop { font-size: clamp(22px, 2.7vw, 30px); }
 @media (max-width: 900px) {
   .route { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-left: 0; }
-  .route li { padding: 0 0 0 44px; }
+  .route li { padding: 0 0 0 calc(var(--dot) + 16px); }
   .route li::before { top: 0; }
   .route li::after { display: none; }
-  .route::before { display: block; left: 11px; right: auto; top: 0; bottom: 0; width: 6px; height: auto; }
+  .route::before { display: block; right: auto; top: 0; bottom: 0; height: auto;
+                   left: calc(var(--dot) / 2 - var(--rail) / 2); width: var(--rail); }
   .route .stop { font-size: clamp(26px, 6vw, 34px); }
 }
 
@@ -375,7 +382,8 @@ h4.sub:first-of-type { margin-top: 20px; }
   .quotes.rolling { animation-name: ribbon-roll; animation-timing-function: linear; animation-iteration-count: infinite; }
   .ribbon:hover .quotes.rolling, .ribbon:focus-within .quotes.rolling { animation-play-state: paused; }
 }
-@keyframes ribbon-roll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+@keyframes ribbon-roll { from { transform: translate3d(0, 0, 0); }
+                           to { transform: translate3d(calc(-1 * var(--shift, 50%)), 0, 0); } }
 @media (prefers-reduced-motion: reduce) { .ribbon { overflow-x: auto; } }
 @media (max-width: 900px) { .quotes { columns: auto; } }
 @media (max-width: 620px) { .quotes { columns: auto; } }
@@ -1726,11 +1734,14 @@ var SHEET_CSV_URL = '';
 
     var quotes = document.querySelector('.quotes');
     if (quotes) {
+      var firstClone = quotes.querySelector('[data-clone]');
       buckets.review.forEach(function (r) {
         var card = reviewCard(r, map);
-        if (card) quotes.appendChild(card);
+        if (!card) return;
+        if (firstClone) quotes.insertBefore(card, firstClone);   // keep originals together
+        else quotes.appendChild(card);
       });
-      if (window.CCRibbon) window.CCRibbon();   // fold the new reviews into the rolling ribbon
+      if (window.CCRibbon) window.CCRibbon(true);   // fold the new reviews into the rolling ribbon
     }
   }
 
@@ -1780,30 +1791,82 @@ var SHEET_CSV_URL = '';
   var track = document.getElementById('quote-track');
   if (!track) return;
 
-  function build() {
+  function dropClones() {
     Array.prototype.forEach.call(track.querySelectorAll('[data-clone]'), function (n) {
       n.parentNode.removeChild(n);
     });
-    track.classList.remove('rolling');
-    var originals = Array.prototype.slice.call(track.children);
-    if (originals.length < 3) return;          // too few to loop convincingly
+  }
 
-    originals.forEach(function (n) {
-      var c = n.cloneNode(true);
-      c.setAttribute('data-clone', '1');
-      c.setAttribute('aria-hidden', 'true');   // the duplicate set is decoration
-      track.appendChild(c);
+  // The repeat distance is every card plus the gap that follows it. Summing the
+  // cards is immune to where clones currently sit in the DOM; measuring the span
+  // from the first card to the last is not, because reviews arriving from the
+  // sheet get added after the clones already in the strip.
+  function measureSet(items) {
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var total = 0;
+    items.forEach(function (n) { total += n.getBoundingClientRect().width + gap; });
+    return total;
+  }
+
+  var builtFor = '';
+
+  function build(force) {
+    if (force) builtFor = '';
+    var originals = Array.prototype.slice.call(track.children).filter(function (n) {
+      return !n.hasAttribute('data-clone');
     });
-    // Pace it by actual width, so the speed feels the same whatever the card size.
-    // Lower PX_PER_SECOND = slower. 18 is an unhurried reading pace.
-    var PX_PER_SECOND = 18;
-    var loopWidth = track.scrollWidth / 2;
-    track.style.animationDuration = Math.max(40, Math.round(loopWidth / PX_PER_SECOND)) + 's';
+    if (originals.length < 3) {                // too few to loop convincingly
+      dropClones();
+      track.classList.remove('rolling');
+      builtFor = '';
+      return;
+    }
+
+    var view = (track.parentNode && track.parentNode.clientWidth) || 1000;
+    var setWidth = measureSet(originals);
+    var key = originals.length + ':' + Math.round(setWidth) + ':' + Math.round(view);
+    if (key === builtFor) return;              // nothing changed, leave it rolling
+    builtFor = key;
+
+    dropClones();
+    track.classList.remove('rolling');
+
+    // Enough copies that one full set can scroll away and the rest still fills
+    // the strip. Narrow screens with few reviews need more than one copy.
+    // The strip renders N sets minus the trailing gap, and after one set has
+    // scrolled away the rest must still cover the view: N*set - gap >= set + view.
+    var gapPx = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var copies = Math.max(2, Math.ceil(1 + (view + gapPx) / setWidth));
+    for (var c = 1; c < copies; c++) {
+      originals.forEach(function (n) {
+        var dup = n.cloneNode(true);
+        dup.setAttribute('data-clone', '1');
+        dup.setAttribute('aria-hidden', 'true');   // duplicates are decoration
+        track.appendChild(dup);
+      });
+    }
+
+    // Shift by exactly one set. translateX(-50%) was 8px short every loop,
+    // because a set is 7 cards + 7 gaps but half the track is 7 cards + 6.5.
+    track.style.setProperty('--shift', setWidth + 'px');
+    // Pace by how long a card stays on screen rather than pixels per second.
+    // A phone shows a narrower strip, so it must move slower to feel the same
+    // as a laptop. Higher SECONDS_ON_SCREEN = slower, everywhere.
+    var SECONDS_ON_SCREEN = 200;
+    var cardW = originals[0].getBoundingClientRect().width + gapPx;
+    var speed = (view + cardW) / SECONDS_ON_SCREEN;                // pixels per second
+    track.style.animationDuration = Math.max(60, Math.round(setWidth / speed)) + 's';
     track.classList.add('rolling');
   }
 
   window.CCRibbon = build;
   build();
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 300);   // card width changes, so the pace must too
+  });
 })();
 </script>
 
